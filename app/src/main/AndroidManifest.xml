@@ -30,9 +30,9 @@
             <intent-filter>
                 <action android:name="android.service.wallpaper.WallpaperService" />
             </intent-filter>
-<!--            <meta-data-->
-<!--                android:name="android.service.wallpaper"-->
-<!--                android:resource="@xml/livewallpapervideo" />-->
+            <meta-data
+                android:name="android.service.wallpaper"
+                android:resource="@xml/live_wallpaper_service_info" />
         </service>
     </application>
 
