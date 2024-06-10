@@ -1,13 +1,18 @@
 package com.lollipop.photo.wallpaper.engine
 
 import android.graphics.Canvas
-import android.graphics.Rect
 
 abstract class WallpaperDrawable {
 
-    protected val bounds = Rect()
+    val bounds = LBoundsImpl()
 
     private var callback: Callback? = null
+
+    var isNight = false
+
+    open fun onCreate() {
+
+    }
 
     fun setCallback(callback: Callback?) {
         this.callback = callback
@@ -17,8 +22,8 @@ abstract class WallpaperDrawable {
         callback?.invalidateDrawable(this)
     }
 
-    fun setBounds(left: Int, top: Int, right: Int, bottom: Int) {
-        bounds.set(left, top, right, bottom)
+    fun setBounds(source: LBounds) {
+        bounds.copyFrom(source)
         onBoundsChanged()
     }
 
