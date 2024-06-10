@@ -62,6 +62,17 @@ class LBoundsImpl : LBounds {
     override var innerRight = 0f
     override var innerBottom = 0f
 
+    fun offset(dx: Float, dy: Float) {
+        outerLeft += dx
+        outerTop += dy
+        outerRight += dx
+        outerBottom += dy
+        innerLeft += dx
+        innerTop += dy
+        innerRight += dx
+        innerBottom += dy
+    }
+
     fun setQuadrilateral(
         leftTopX: Float,
         leftTopY: Float,
